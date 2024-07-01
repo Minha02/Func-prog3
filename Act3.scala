@@ -19,6 +19,18 @@ object Act3 {
     (num1 + num2) / 2.0f
   }
 
+  def sumEven(numbers:List[Int]):Int ={
+    numbers match{
+      case Nil => 0
+      case head:: tail=>
+        if(head% 2 == 0){
+          head +sumEven(tail)
+        }else{
+          sumEven(tail)
+        }
+    }
+  }
+
 
   def main(args: Array[String]): Unit = {
     println("Reversed String: " + reverseString("HELLO"))
@@ -30,5 +42,10 @@ object Act3 {
     var num1 = 67
     var num2 = 78
     printf("Arithmetic mean of %d and %d = %.2f\n",num1,num2,Average(num1,num2))
+  
+    val inputNumbers = List(1, 2, 3, 4, 5, 6)
+    val sumOfEvens = sumEven(inputNumbers)
+    println(sumOfEvens)
   }  
+
 }
