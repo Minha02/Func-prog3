@@ -13,8 +13,12 @@ object Act3 {
       } else {
         filterLongStrings(tail)
       }
+    }
   }
-}
+  def Average(num1:Int,num2:Int):Float ={
+    (num1 + num2) / 2.0f
+  }
+
 
   def main(args: Array[String]): Unit = {
     println("Reversed String: " + reverseString("HELLO"))
@@ -22,5 +26,9 @@ object Act3 {
     val inputStrsings = List("Nimal", "Kamal", "BKNKNKnknas","Abcdefghijk")
     val filteredStrings = filterLongStrings(inputStrsings)
     println(filteredStrings)
-  }
+
+    var num1 = 67
+    var num2 = 78
+    printf("Arithmetic mean of %d and %d = %.2f\n",num1,num2,Average(num1,num2))
+  }  
 }
